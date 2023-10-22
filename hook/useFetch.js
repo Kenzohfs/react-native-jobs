@@ -20,12 +20,33 @@ const useFetch = (endpoint, query) => {
     },
   };
 
+  /* Delete */
+  // let options = {
+  //   method: 'GET',
+  //   url: `http://localhost:3000/jobs`,
+  // };
+
+  // if (endpoint === 'job-details') {
+  //   options = {
+  //     method: 'GET',
+  //     url: `http://localhost:3000/jobs?job_id=${query.job_id}`,
+  //   };
+  // }
+  /* Delete */
+
   const fetchData = async () => {
     setisLoading(true);
+    console.log('passou');
 
     try {
       const response = await axios.request(options);
+      console.log('data: ', response);
       setData(response.data.data);
+
+      /* Delete */
+      // setData(response.data);
+      /* Delete */
+
       setisLoading(false);
     } catch (error) {
       setError(error);
